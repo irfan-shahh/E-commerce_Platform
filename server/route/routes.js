@@ -1,0 +1,18 @@
+const express=require('express')
+const router=express.Router()
+const {signupUser,loginUser, logoutUser,verifyUser}=require('../controller/user_controller')
+const {getProducts,getProductsById}=require('../controller/product_controller')
+const authenticate = require('../middleware/authenticate')
+const {createCheckOutSession,verifySession,getUserOrders}=require('../controller/payment_controller')
+
+router.post('/signup',signupUser,)
+router.post('/login',loginUser)
+router.post('/logout',authenticate,logoutUser)
+router.get('/products',getProducts)
+router.get('/product/:id',getProductsById)
+router.get('/cart/product/:id',authenticate,getProductsById)
+router.get('/verify',verifyUser)
+router.post('/payment/create-checkout-session',authenticate,createCheckOutSession)
+router.post('/payment/verify-session',authenticate,verifySession)
+router.get('/orders',authenticate,getUserOrders)
+module.exports=router;

@@ -1,0 +1,7 @@
+export const ADD_ITEMS_TO_CART='addItemsToCart'
+export const ADD_ITEMS_TO_CART_ERROR='addItemsToCartError'
+export const REMOVE_ITEMS_FROM_CART='removeItemsFromCart'
+export const RESET_CART='resetCart'
+export const AUTH_REQUIRED='authRequired'
+export const CLEAR_AUTH_REQUIRED='clearAuthRequired'
+export const UPDATE_CART_ITEM_QUANTITY='updateCartItemquantity'
